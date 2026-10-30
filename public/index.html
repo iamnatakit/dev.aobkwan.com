@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple task list powered by Node.js and SQLite."
+    />
+    <title>Daylight — Your tasks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Daylight home">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>daylight</span>
+        </a>
+        <span class="storage-label"><span class="status-dot"></span> Saved on this device</span>
+      </header>
+
+      <section class="content" aria-labelledby="page-title">
+        <div class="eyebrow">YOUR SPACE, YOUR PACE</div>
+        <h1 id="page-title">Make room for<br /><span>what matters.</span></h1>
+        <p class="intro">A little progress adds up. What would you like to get done?</p>
+
+        <form id="task-form" class="task-form">
+          <label class="sr-only" for="task-input">Add a task</label>
+          <input
+            id="task-input"
+            name="title"
+            type="text"
+            maxlength="200"
+            placeholder="Write down a task..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit"><span aria-hidden="true">＋</span> Add task</button>
+        </form>
+
+        <div class="list-heading">
+          <h2>Your tasks <span id="task-count" class="count">0</span></h2>
+          <button id="clear-completed" class="text-button" type="button" hidden>
+            Clear completed
+          </button>
+        </div>
+
+        <p id="message" class="message" role="status" hidden></p>
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
+        <div id="empty-state" class="empty-state" hidden>
+          <span class="empty-icon" aria-hidden="true">✧</span>
+          <p>Nothing on your list just yet.</p>
+          <span>Start with one small thing.</span>
+        </div>
+
+        <footer class="footer-note">
+          <span aria-hidden="true">✦</span> One thing at a time is still progress.
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
